@@ -4,7 +4,8 @@ author: njustzsq
 description: > # this means to ignore newlines until "show_exerpts:"
   hello
 show_excerpts: true # set to true to show excerpts on the homepage
-
+theme: texture
+$ bundle
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
