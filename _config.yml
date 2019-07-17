@@ -214,7 +214,7 @@ busuanzi:
 
 run-time:
   enable: true
-  start-time: '07/17/2019 11:03:56' # github上clone下来，建立page的第一天
+  start-time: '10/04/2019 11:03:56' # github上clone下来，建立page的第一天
   alert: 努力运行
   day: 天
   hour: 时
