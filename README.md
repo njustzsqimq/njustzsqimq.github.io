@@ -1,130 +1,109 @@
-# texture
+# The Cayman theme
 
-A configurable jekyll theme for simply beautiful blogs.
+[![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
 
-**Demo**: [thelehhman.com/texture](https://thelehhman.com/texture)
+*Cayman is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/cayman), or even [use it today](#usage).*
 
-![texture theme preview](/screen1.png)
-
-
-## Installation on Github Pages
-
-Add this line to your site's `_config.yml`:
-```yaml
-remote_theme: thelehhman/texture
-```
-
-**NOTE: If you are forking this repo, remove `base_url: /texture` in the `_config.yml` which is required to load the required website assets**
-## Installation
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "texture"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: texture
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install texture
+![Thumbnail of Cayman](thumbnail.png)
 
 ## Usage
 
-The "texture" key in _config.yml is used to customize the theme data.
-```yaml
-texture:
-  title: Adam Denisov
-  tagline: Developer. Designer
-  date_format: "%b %-d, %Y"
+To use the Cayman theme:
 
-  social_links:
-    twitter: thelehhman
-    github:  thelehhman
-    linkedIn: in/thelehhman # format: locale/username
+1. Add the following to your site's `_config.yml`:
+
+    ```yml
+    theme: jekyll-theme-cayman
+    ```
+
+2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+
+    ```ruby
+    gem "github-pages", group: :jekyll_plugins
+    ```
+
+## Customizing
+
+### Configuration variables
+
+Cayman will respect the following variables, if set in your site's `_config.yml`:
+
+```yml
+title: [The title of your site]
+description: [A short description of your site's purpose]
 ```
 
-**Styling**
+Additionally, you may choose to set the following optional variables:
 
-Multiple header styles are supported using the "style" property under texture in `_config.yml`.
-
-```yaml
-texture:
-  style: [yellow|red|black|blue|green|purple]
+```yml
+show_downloads: ["true" or "false" to indicate whether to provide a download URL]
+google_analytics: [Your Google Analytics tracking ID]
 ```
 
-For example, the blue style looks like this:
+### Stylesheet
 
-![texture theme blue](/screen2.png)
+If you'd like to add your own custom styles:
 
+1. Create a file called `/assets/css/style.scss` in your site
+2. Add the following content to the top of the file, exactly as shown:
+    ```scss
+    ---
+    ---
 
-**Texture Picker**
+    @import "{{ site.theme }}";
+    ```
+3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
 
-You can toggle the texture picker to show/experiment various textures on your site using the showPicker variable. Remember to make it `false` for production.
+*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
 
-```yaml
-texture:
-  showPicker: [false|true] # show the texture selector(development purposes)
-```
+### Layouts
 
-**Comments (Disqus)**
+If you'd like to change the theme's HTML layout:
 
-Comments on posts can be enabled by specifying your disqus_shortname under texture in `_config.yml`. For example,
-```yaml
-texture:
-  disqus_shortname: games
-```
+1. [Copy the original template](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
+2. Create a file called `/_layouts/default.html` in your site
+3. Paste the default layout content copied in the first step
+4. Customize the layout as you'd like
 
-**Google Analytics**
+### Overriding GitHub-generated URLs
 
-It can be enabled by specifying your analytics id under texture in `_config.yml`
-```yaml
-texture:
-  analytics_id: '< YOUR ID >'
-```
+Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
 
-**Excerpts**
+1. Look at [the template source](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
+    ```yml
+    github:
+      zip_url: http://example.com/download.zip
+      another_url: another value
+    ```
+3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
 
-Excerpts can be enabled by adding the following line to your `_config.yml`
-```yaml
-show_excerpts: true
-```
+*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
 
-**Toggle Navbar**
+For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
 
-```yaml
-texture:
-  showNav: true
-```
+## Roadmap
 
-**Layouts**
+See the [open issues](https://github.com/pages-themes/cayman/issues) for a list of proposed features (and known issues).
 
-- Home
-- Page
-- Post
+## Project philosophy
+
+The Cayman theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/thelehhman/texture. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Interested in contributing to Cayman? We'd love your help. Cayman is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
 
-## Development
+### Previewing the theme locally
 
-To set up your environment to develop this theme, run `bundle install`.
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+1. Clone down the theme's repository (`git clone https://github.com/pages-themes/cayman`)
+2. `cd` into the theme's directory
+3. Run `script/bootstrap` to install the necessary dependencies
+4. Run `bundle exec jekyll serve` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `texture.gemspec` accordingly.
+### Running tests
 
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
+The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
