@@ -8,5 +8,5 @@ Channel bonding：通道绑定。SerDes每个通道如果不是完全等长，�
 RX channel bonding只支持8B/10B编码。
 因为channel bonding需要使用RX弹性缓冲，所以需要启用RX buf。
 启用改功能的步骤如下：
-![pic1](images/channel_bonding_use.png)
+![pic1](https://github.com/njustzsqimq/njustzsqimq.github.io/blob/master/_posts/images/channel_bonding_use.png)
 
