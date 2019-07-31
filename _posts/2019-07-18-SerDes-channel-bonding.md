@@ -1,6 +1,6 @@
 ---
 title: SerDes channel bonding
-categories: 高速接口
+categories: [高速接口]
 date: 2019-07-17 15:57:23
 ---
 ## 通道绑定作用
