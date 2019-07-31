@@ -4,6 +4,7 @@ title: FPGA learning
 showtag:
 - 高速接口
 - 通信
+- 程序设计
 ---
 ## 近期
 
