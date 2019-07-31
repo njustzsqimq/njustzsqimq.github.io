@@ -3,6 +3,7 @@ layout: page
 title: FPGA learning
 showtag:
 - 高速接口
+- 通信
 ---
 ## 近期
 
